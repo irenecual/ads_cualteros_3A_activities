@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
+    protected $filiable = ['first_name', 'last_name', 'email', 'age'];
+
+    protected function student(){
+        return $this->hasMany(Student::class);
+    }
 }
